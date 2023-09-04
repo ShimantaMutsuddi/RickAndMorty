@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.chutyrooms.rickandmorty.R
 import com.chutyrooms.rickandmorty.databinding.ItemCharacterBinding
 import com.example.rickandmorty.data.entities.Character
 
@@ -48,6 +49,13 @@ class CharacterViewHolder(private val itemBinding: ItemCharacterBinding, private
         this.character = item
         itemBinding.name.text = item.name
         itemBinding.speciesAndStatus.text = """${item.species} - ${item.status}"""
+        when(item.status)
+        {
+            "Alive" -> itemBinding.status.setBackgroundResource(R.drawable.ic_status_circle_green)
+            "unknown" ->itemBinding.status.setBackgroundResource(R.drawable.ic_status_circle_gray)
+            "Dead" ->itemBinding.status.setBackgroundResource(R.drawable.ic_status_circle_red)
+
+        }
         val imageLink = item?.image
         itemBinding.image.load(imageLink) {
             crossfade(true)

@@ -6,11 +6,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.paging.ExperimentalPagingApi
 import com.chutyrooms.rickandmorty.R
 import com.chutyrooms.rickandmorty.databinding.ActivityMainBinding
 import com.chutyrooms.rickandmorty.ui.character.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

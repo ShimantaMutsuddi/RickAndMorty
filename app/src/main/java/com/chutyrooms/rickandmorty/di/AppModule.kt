@@ -1,10 +1,8 @@
 package com.chutyrooms.rickandmorty.di
 
 import android.content.Context
+import androidx.room.Room
 import com.chutyrooms.rickandmorty.data.local.AppDatabase
-import com.chutyrooms.rickandmorty.data.local.CharacterDao
-import com.chutyrooms.rickandmorty.data.remote.CharacterRemoteDataSource
-import com.chutyrooms.rickandmorty.data.repository.CharacterRepository
 import com.example.rickandmorty.data.remote.CharacterService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -35,22 +33,29 @@ object AppModule {
     fun provideCharacterService(retrofit: Retrofit): CharacterService = retrofit.create(
         CharacterService::class.java)
 
-    @Singleton
+    /*@Singleton
     @Provides
-    fun provideCharacterRemoteDataSource(characterService: CharacterService) = CharacterRemoteDataSource(characterService)
+    fun provideCharacterRemoteDataSource(characterService: CharacterService) = CharacterRemoteDataSource(characterService)*/
 
-    @Singleton
+   /* @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext appContext: Context) = AppDatabase.getDatabase(appContext)
 
     @Singleton
     @Provides
-    fun provideCharacterDao(db: AppDatabase) = db.characterDao()
+    fun provideCharacterDao(db: AppDatabase) = db.characterDao()*/
+
 
     @Singleton
     @Provides
+    fun provideDatabase(@ApplicationContext context: Context) : AppDatabase{
+        return Room.databaseBuilder(context, AppDatabase::class.java, "characters")
+            .build()
+    }
+
+    /*@Singleton
+    @Provides
     fun provideRepository(remoteDataSource: CharacterRemoteDataSource,
                           localDataSource: CharacterDao
-    ) =
-        CharacterRepository(remoteDataSource, localDataSource)
+    ) = CharacterRepository(remoteDataSource, localDataSource)*/
 }

@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/drawable/ic_status_circle_gray.xml" value="0.143" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/drawable/ic_status_circle_green.xml" value="0.143" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/drawable/ic_status_circle_red.xml" value="0.143" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/layout/activity_main.xml" value="0.14221014492753623" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/layout/fragment_characters.xml" value="0.14221014492753623" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/layout/item_character.xml" value="0.22" />
+        <entry key="..\:/mutsuddi/RickAndMorty_CleanCode/app/src/main/res/layout/loader_item.xml" value="0.14221014492753623" />
         <entry key="..\:/mutsuddi/TigerItAssesMent/app/src/main/res/layout/activity_main.xml" value="0.14221014492753623" />
         <entry key="..\:/mutsuddi/TigerItAssesMent/app/src/main/res/layout/fragment_character_detail.xml" value="0.14221014492753623" />
         <entry key="..\:/mutsuddi/TigerItAssesMent/app/src/main/res/layout/fragment_characters.xml" value="0.14221014492753623" />

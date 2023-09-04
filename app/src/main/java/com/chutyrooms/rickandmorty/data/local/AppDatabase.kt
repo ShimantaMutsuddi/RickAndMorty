@@ -4,8 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.chutyrooms.rickandmorty.data.model.CharacterRemoteKeys
 import com.example.rickandmorty.data.entities.Character
+@Database(entities = [Character::class, CharacterRemoteKeys::class], version = 1, exportSchema = false)
+abstract class AppDatabase : RoomDatabase() {
 
+    abstract fun characterDao(): CharacterDao
+    abstract fun remoteKeysDao(): RemoteKeysDao
+
+
+}
+
+/*
 @Database(entities = [Character::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -23,4 +33,4 @@ abstract class AppDatabase : RoomDatabase() {
                 .build()
     }
 
-}
+}*/

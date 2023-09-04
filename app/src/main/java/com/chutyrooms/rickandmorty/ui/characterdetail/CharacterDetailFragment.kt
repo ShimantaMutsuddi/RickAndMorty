@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
+import androidx.paging.ExperimentalPagingApi
 import coil.load
 import com.chutyrooms.rickandmorty.databinding.FragmentCharacterDetailBinding
 import com.chutyrooms.rickandmorty.databinding.FragmentCharactersBinding
@@ -16,7 +17,7 @@ import com.chutyrooms.rickandmorty.utils.Resource
 import com.example.rickandmorty.data.entities.Character
 import dagger.hilt.android.AndroidEntryPoint
 
-
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class CharacterDetailFragment : Fragment() {
 
@@ -38,9 +39,9 @@ class CharacterDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //arguments?.getInt("id", 0) ?: 0.let { viewModel.start(it) }
         args.characterId?.let { viewModel.start(it) }
-        setupObservers()
+       // setupObservers()
     }
-    private fun setupObservers() {
+    /*private fun setupObservers() {
         viewModel.character.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
@@ -58,7 +59,7 @@ class CharacterDetailFragment : Fragment() {
                 }
             }
         })
-    }
+    }*/
 
     private fun bindCharacter(character: Character) {
         binding.name.text = character.name
