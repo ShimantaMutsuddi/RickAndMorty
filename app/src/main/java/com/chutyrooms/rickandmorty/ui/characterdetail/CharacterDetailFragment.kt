@@ -17,13 +17,12 @@ import com.chutyrooms.rickandmorty.utils.Resource
 import com.example.rickandmorty.data.entities.Character
 import dagger.hilt.android.AndroidEntryPoint
 
-@ExperimentalPagingApi
+
 @AndroidEntryPoint
 class CharacterDetailFragment : Fragment() {
 
     private var _binding: FragmentCharacterDetailBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: CharacterDetailViewModel by viewModels()
     val args: CharacterDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -38,7 +37,7 @@ class CharacterDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //arguments?.getInt("id", 0) ?: 0.let { viewModel.start(it) }
-        args.characterId?.let { viewModel.start(it) }
+        args.character?.let { bindCharacter(it) }
        // setupObservers()
     }
     /*private fun setupObservers() {

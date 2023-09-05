@@ -19,7 +19,7 @@ class LoaderAdapter: LoadStateAdapter<LoaderAdapter.LoaderViewHolder>() {
 
             binding.apply {
                 loader.isVisible= loadState is LoadState.Loading
-                tvError.isVisible= loadState is LoadState.Error
+                loader.isVisible= loadState is LoadState.Error
                 tvError.isVisible= loadState is LoadState.Error
             }
         }

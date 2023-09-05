@@ -21,7 +21,7 @@
         android:label="Character Detail"
         tools:layout="@layout/fragment_character_detail" >
         <argument
-            android:name="characterId"
-            app:argType="integer" />
+            android:name="character"
+            app:argType="com.example.rickandmorty.data.entities.Character" />
     </fragment>
 </navigation>

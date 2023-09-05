@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharacterDetailFragment">
+    tools:context=".ui.characterdetail.CharacterDetailFragment">
 
-    <ProgressBar
+    <!--<ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
-        tools:visibility="gone" />
+        tools:visibility="gone" />-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/character_cl"

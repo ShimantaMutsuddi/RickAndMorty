@@ -95,7 +95,8 @@ class CharactersFragment : Fragment(),CharacterAdapter.OnItemClickListener {
     }*/
 
     override fun onItemClick(character: Character) {
-        TODO("Not yet implemented")
+        val action=CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailFragment(character)
+        Navigation.findNavController(binding.root).navigate(action)
     }
 
 
