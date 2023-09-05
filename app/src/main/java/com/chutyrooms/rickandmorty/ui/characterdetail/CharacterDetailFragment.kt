@@ -65,6 +65,8 @@ class CharacterDetailFragment : Fragment() {
         binding.species.text = character.species
         binding.status.text = character.status
         binding.gender.text = character.gender
+        binding.origin.text= character.origin.name.toString()
+        binding.location.text= character.location.name.toString()
         binding.image.load(character.image) {
             crossfade(true)
             crossfade(1000)

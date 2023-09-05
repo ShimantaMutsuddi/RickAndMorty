@@ -19,7 +19,6 @@
         android:text="Result could not be loaded"
         android:gravity="center_horizontal"
         android:textSize="18sp"
-        android:textColor="@color/black"
         android:fontFamily="@font/brandon_grotesque_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

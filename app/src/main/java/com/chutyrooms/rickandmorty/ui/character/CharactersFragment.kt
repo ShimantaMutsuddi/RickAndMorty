@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.paging.ExperimentalPagingApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chutyrooms.rickandmorty.R
@@ -95,6 +96,7 @@ class CharactersFragment : Fragment(),CharacterAdapter.OnItemClickListener {
     }*/
 
     override fun onItemClick(character: Character) {
+
         val action=CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailFragment(character)
         Navigation.findNavController(binding.root).navigate(action)
     }
