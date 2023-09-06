@@ -16,6 +16,7 @@ class TypeConverter {
     fun toLocation(locationString: String): Location {
         return Gson().fromJson(locationString, Location::class.java)
     }
+
     @TypeConverter
     fun fromOrigin(origin: Origin): String {
         return Gson().toJson(origin)

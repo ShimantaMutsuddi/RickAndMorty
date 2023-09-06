@@ -1,4 +1,5 @@
 package com.chutyrooms.rickandmorty.data.paging
+
 import android.provider.MediaStore
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
@@ -16,8 +17,8 @@ class CharacterRemoteMediator(
     private val appDatabase: AppDatabase
 ) : RemoteMediator<Int, Character>() {
 
-    private val characterDao=appDatabase.characterDao()
-    private val characterRemoteKeysDao=appDatabase.remoteKeysDao()
+    private val characterDao = appDatabase.characterDao()
+    private val characterRemoteKeysDao = appDatabase.remoteKeysDao()
 
     override suspend fun load(
         loadType: LoadType,
@@ -25,11 +26,9 @@ class CharacterRemoteMediator(
     ): MediatorResult {
 
 
-
-
         return try {
             // 3->logic for stated - refreash, prepend , append
-            val currentPage=when(loadType){
+            val currentPage = when (loadType) {
                 LoadType.REFRESH -> {
                     val remoteKeys = getRemoteKeyClosestToCurrentPosition(state)
                     remoteKeys?.nextPage?.minus(1) ?: 1
@@ -52,28 +51,27 @@ class CharacterRemoteMediator(
                 }
             }
             // 1->fetch character from api
-            val response=characterService.getAllCharacters(currentPage)
-            val endOfPaginationReached= response.body()?.info?.pages == currentPage
+            val response = characterService.getAllCharacters(currentPage)
+            val endOfPaginationReached = response.body()?.info?.pages == currentPage
 
-            val prevPage=if(currentPage==1) null else currentPage-1
-            val nextPage=if(endOfPaginationReached) null else currentPage+1
+            val prevPage = if (currentPage == 1) null else currentPage - 1
+            val nextPage = if (endOfPaginationReached) null else currentPage + 1
 
             // 2->save the characters + remoteKeys data into db
             appDatabase.withTransaction {
 
-                if(loadType == LoadType.REFRESH){
+                if (loadType == LoadType.REFRESH) {
                     characterDao.deleteAllCharacter()
                     characterRemoteKeysDao.deleteAllCharacterKeys()
                 }
                 characterDao.insertAll(response.body()!!.results)
 
-                val keys= response.body()!!.results.map{character->
+                val keys = response.body()!!.results.map { character ->
                     CharacterRemoteKeys(
-                        id=character.id,
-                        prevPage =  prevPage,
-                       nextPage =  nextPage
+                        id = character.id,
+                        prevPage = prevPage,
+                        nextPage = nextPage
                     )
-
 
 
                 }
@@ -81,18 +79,18 @@ class CharacterRemoteMediator(
 
 
             }
-            MediatorResult.Success(endOfPaginationReached )
+            MediatorResult.Success(endOfPaginationReached)
 
-        }catch (e:Exception)
-        {
+        } catch (e: Exception) {
             MediatorResult.Error(e)
 
         }
 
 
     }
+
     private suspend fun getRemoteKeyClosestToCurrentPosition(
-        state: PagingState<Int,Character >
+        state: PagingState<Int, Character>
     ): CharacterRemoteKeys? {
         return state.anchorPosition?.let { position ->
             state.closestItemToPosition(position)?.id?.let { id ->

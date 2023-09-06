@@ -12,10 +12,7 @@ import com.example.rickandmorty.data.entities.Character
 @Dao
 interface RemoteKeysDao {
     @Query("SELECT * FROM CharacterRemoteKeys WHERE id=:id")
-    suspend fun getRemoteKeys(id: Int) : CharacterRemoteKeys
-
-    /*Query("SELECT * FROM characters WHERE id = :id")
-    fun getCharacter(id: Int): LiveData<Character>*/
+    suspend fun getRemoteKeys(id: Int): CharacterRemoteKeys
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllRemoteKeys(characters: List<CharacterRemoteKeys>)
@@ -24,6 +21,5 @@ interface RemoteKeysDao {
     @Query("DELETE FROM CharacterRemoteKeys")
     suspend fun deleteAllCharacterKeys()
 
-    /*@Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(character: Character)*/
+
 }

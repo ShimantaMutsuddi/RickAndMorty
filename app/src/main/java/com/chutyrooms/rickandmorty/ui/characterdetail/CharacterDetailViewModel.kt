@@ -20,14 +20,14 @@ class CharacterDetailViewModel @Inject constructor(
 
     private val _id = MutableLiveData<Int>()
 
-   /* private val _character = _id.switchMap { id ->
-        repository.getCharacter(id)
-    }
-    val character: LiveData<Resource<Character>> = _character*/
+    /* private val _character = _id.switchMap { id ->
+         repository.getCharacter(id)
+     }
+     val character: LiveData<Resource<Character>> = _character*/
 
 
-    fun start(id: Int) {
-        _id.value = id
-    }
+    /*   fun start(id: Int) {
+           _id.value = id
+       }*/
 
 }

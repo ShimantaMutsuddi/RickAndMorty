@@ -38,7 +38,7 @@ class CharacterDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //arguments?.getInt("id", 0) ?: 0.let { viewModel.start(it) }
         args.character?.let { bindCharacter(it) }
-       // setupObservers()
+        // setupObservers()
     }
     /*private fun setupObservers() {
         viewModel.character.observe(viewLifecycleOwner, Observer {
@@ -65,13 +65,14 @@ class CharacterDetailFragment : Fragment() {
         binding.species.text = character.species
         binding.status.text = character.status
         binding.gender.text = character.gender
-        binding.origin.text= character.origin.name.toString()
-        binding.location.text= character.location.name.toString()
+        binding.origin.text = character.origin.name.toString()
+        binding.location.text = character.location.name.toString()
         binding.image.load(character.image) {
             crossfade(true)
             crossfade(1000)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

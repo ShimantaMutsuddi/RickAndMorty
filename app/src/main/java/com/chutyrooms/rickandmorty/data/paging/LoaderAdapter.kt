@@ -9,18 +9,18 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.chutyrooms.rickandmorty.databinding.LoaderItemBinding
 
-class LoaderAdapter: LoadStateAdapter<LoaderAdapter.LoaderViewHolder>() {
+class LoaderAdapter : LoadStateAdapter<LoaderAdapter.LoaderViewHolder>() {
 
     class LoaderViewHolder(private val binding: LoaderItemBinding) :
-        RecyclerView.ViewHolder(binding.root){
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(loadState: LoadState)
-        {
+        fun bind(loadState: LoadState) {
+
 
             binding.apply {
-                loader.isVisible= loadState is LoadState.Loading
-                loader.isVisible= loadState is LoadState.Error
-                tvError.isVisible= loadState is LoadState.Error
+                loader.isVisible = loadState is LoadState.Loading
+                loader.isVisible = loadState is LoadState.Error
+                tvError.isVisible = loadState is LoadState.Error
             }
         }
     }
@@ -30,7 +30,8 @@ class LoaderAdapter: LoadStateAdapter<LoaderAdapter.LoaderViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoaderViewHolder {
-        val binding: LoaderItemBinding = LoaderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding: LoaderItemBinding =
+            LoaderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return LoaderViewHolder(binding)
     }
 }
