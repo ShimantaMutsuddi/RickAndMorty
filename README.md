@@ -46,13 +46,11 @@ app
 │   │
 │   ├── features
 │   │   ├── feature1
-│   │   │   ├── view    // Fragments/Activities
+│   │   │   ├── view    // Fragments
 │   │   │   ├── viewmodel   // ViewModels
 │   │   │   ├── adapter // Adapters for RecyclerViews
 │   │   │
 │   │   ├── feature2
-│   │   └── ...         // Other feature modules
-│   │
 │
 ├── utils               // Utility classes and extensions
 │
