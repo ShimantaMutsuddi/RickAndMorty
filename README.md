@@ -18,6 +18,7 @@ The Rick and Morty - App was created using clean architecture principles, the Re
     <td><img src="app/screenshots/Character_Detail.jpeg" width=300 ></td>
   </tr>
  </table>
+ <br> If you appreciate what you see, please star⭐ the repository.
 
 
 ## Code Flow:
