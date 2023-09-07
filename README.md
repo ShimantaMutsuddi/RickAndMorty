@@ -6,6 +6,7 @@ The Rick and Morty - App was created using clean architecture principles, the Re
 **App features:**
 - List of Rick and Morty characters
 - Detail of characters
+  
 **Screenshots:**
   <table>
   <tr>
