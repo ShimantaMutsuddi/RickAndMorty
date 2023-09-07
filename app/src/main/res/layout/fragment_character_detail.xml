@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.characterdetail.CharacterDetailFragment">
+    tools:context=".ui.features.characterdetail.CharacterDetailFragment">
 
     <!--<ProgressBar
         android:id="@+id/progress_bar"
@@ -102,6 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="TextView"
+            android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             android:fontFamily="@font/gilroy_regular"

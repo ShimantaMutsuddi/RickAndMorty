@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/charactersFragment"
-        android:name="com.chutyrooms.rickandmorty.ui.characters.CharactersFragment"
+        android:name="com.chutyrooms.rickandmorty.ui.features.characters.CharactersFragment"
         android:label="Characters"
         tools:layout="@layout/fragment_characters" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.chutyrooms.rickandmorty.ui.characterdetail.CharacterDetailFragment"
+        android:name="com.chutyrooms.rickandmorty.ui.features.characterdetail.CharacterDetailFragment"
         android:label="Character Detail"
         tools:layout="@layout/fragment_character_detail" >
         <argument

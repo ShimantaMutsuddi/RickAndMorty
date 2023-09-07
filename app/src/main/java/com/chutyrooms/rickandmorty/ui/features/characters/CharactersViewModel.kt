@@ -1,4 +1,4 @@
-package com.chutyrooms.rickandmorty.ui.characters
+package com.chutyrooms.rickandmorty.ui.features.characters
 
 
 import androidx.lifecycle.LiveData

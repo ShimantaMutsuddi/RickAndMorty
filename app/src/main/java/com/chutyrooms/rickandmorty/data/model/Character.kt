@@ -21,5 +21,5 @@ data class Character(
     val type: String,
     val url: String,
     val location: Location,
-    val origin: Origin,
+    val origin: Origin
 ) : Serializable

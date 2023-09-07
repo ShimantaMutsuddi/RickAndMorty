@@ -7,9 +7,7 @@ import com.example.rickandmorty.data.remote.CharacterService
 
 class CharacterPagingSource(val characterService: CharacterService): PagingSource<Int,Character>() {
     override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
-        // load PagingSource er help kore jodi page harai fele
-        //ekane kiso logic likha hoy jar basis judge kora jai next kon page
-        // amder ekta anchor position aase jar basis e amra deside kori amader next  page
+
         return state.anchorPosition?.let {
             state.closestPageToPosition(it)?.prevKey?.plus(1)
                 ?: state.closestPageToPosition(it)?.nextKey?.minus(1)

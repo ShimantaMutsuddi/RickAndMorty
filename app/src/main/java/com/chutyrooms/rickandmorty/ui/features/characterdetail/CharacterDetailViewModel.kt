@@ -1,14 +1,10 @@
-package com.chutyrooms.rickandmorty.ui.characterdetail
+package com.chutyrooms.rickandmorty.ui.features.characterdetail
 
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.switchMap
 import androidx.paging.ExperimentalPagingApi
 import com.chutyrooms.rickandmorty.data.repository.CharacterRepository
-import com.chutyrooms.rickandmorty.utils.Resource
-import com.example.rickandmorty.data.entities.Character
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

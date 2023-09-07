@@ -1,4 +1,4 @@
-package com.chutyrooms.rickandmorty.ui
+package com.chutyrooms.rickandmorty.ui.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.paging.ExperimentalPagingApi
 import com.chutyrooms.rickandmorty.R
 import com.chutyrooms.rickandmorty.databinding.ActivityMainBinding
-import com.chutyrooms.rickandmorty.ui.characters.CharactersViewModel
+import com.chutyrooms.rickandmorty.ui.features.characters.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalPagingApi
